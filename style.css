@@ -1,0 +1,504 @@
+/* =================== */
+/* ESTILOS GENERALES */
+/* =================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* =================== */
+/* NAVBAR */
+/* =================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #222;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 2rem;
+  z-index: 999;
+}
+
+.navbar .logo img {
+  height: 50px;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar ul li {
+  margin-left: 1.5rem;
+}
+
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  color: #f39c12;
+}
+
+/* MENU RESPONSIVE */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background: #fff;
+  margin-bottom: 4px;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle { display: flex; }
+  .nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #222;
+    width: 200px;
+  }
+  .nav.show { display: flex; }
+  .nav li { margin: 1rem 0; }
+}
+
+/* =================== */
+/* HERO SECTION */
+/* =================== */
+.hero, #hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 1rem;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero { background: url('mifoto.jpg') no-repeat center/cover; }
+#hero { background: url('fondoHero.jpg') no-repeat center; }
+
+.hero h1 {
+  font-size: 3rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero p {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.hero a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background: #f39c12;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: background 0.3s;
+}
+
+.hero a:hover { background: #d35400; }
+
+/* =================== */
+/* SECCIONES GENERALES */
+/* =================== */
+section {
+  padding: 5rem 2rem;
+}
+
+/* =================== */
+/* SOBRE MI */
+/* =================== */
+#sobre-mi {
+  background: url('fotoS.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+  position: relative;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+#sobre-mi h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+#sobre-mi p {
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  font-size: 1.1rem;
+}
+
+/* Timeline horizontal */
+.timeline-horizontal {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.timeline-item {
+  display: block;
+  background: #f39c12;
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.timeline-item:hover { background: #d35400; }
+
+/* =================== */
+/* CARRERA DEPORTIVA (TIMELINE VERTICAL) */
+/* =================== */
+#carrera {
+  background: #fafafa;
+  text-align: center;
+}
+
+.trayectoria-contenido h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.trayectoria-contenido .intro {
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.timeline-vertical {
+  position: relative;
+  margin: 2rem auto;
+  padding: 2rem 0;
+  width: 90%;
+  max-width: 800px;
+}
+
+.timeline-vertical::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 4px;
+  background: #f39c12;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
+.timeline-block {
+  position: relative;
+  width: 45%;
+  background: #fff;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.timeline-block .year {
+  font-weight: bold;
+  color: #f39c12;
+  font-size: 1.2rem;
+}
+
+.timeline-block h3 { margin-top: 0.5rem; font-size: 1.5rem; }
+.timeline-block p { margin-top: 0.5rem; font-size: 1rem; color: #555; }
+
+.timeline-block:nth-child(odd) { left: 0; }
+.timeline-block:nth-child(even) { left: 55%; }
+
+@media (max-width: 768px) {
+  .timeline-block, .timeline-block:nth-child(even) {
+    left: 0 !important;
+    width: 100%;
+    padding-left: 40px;
+  }
+  .timeline-vertical::before { left: 20px; }
+}
+/* =================== */
+/* HIGHLIGHTS */
+/* =================== */
+.nav ::highlights {
+  color: #00ff00;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: 0.3s;
+}
+
+.nav ::highlights:hover {
+  color: #fff;
+  background-color: rgba(0, 255, 0, 0.2);
+  border-radius: 5px;
+}
+
+/* =================== */
+/* HABILIDADES */
+/* =================== */
+#habilidades {
+  background: #fff;
+  text-align: center;
+  position: relative;
+   width: 100%;
+  height: 100vh; 
+}
+
+#habilidades h2 {
+   color: #00ff00;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 12px;
+  background: #128835;
+  box-shadow: 0 4px 10px rgba(35, 218, 65, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+}
+
+.skill i {
+  font-size: 60px;   /* tamaño del logo */
+  margin-bottom: 10px;
+}
+
+.skill p {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.skill:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(50, 163, 27, 0.5);
+}
+/* =================== */
+/* MIS PROYECTOS */
+/* =================== */
+/* --- PROYECTOS --- */
+#proyectos {
+  padding: 60px 20px;
+  text-align: center;
+  background: #0a0909;
+}
+
+#proyectos h1 {
+  color: #eef1ee;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.proyectos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.proyecto-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.proyecto-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.proyecto-card h3 {
+  margin: 15px 0 10px;
+  font-size: 1.3em;
+  color: #333;
+}
+
+.proyecto-card p {
+  font-size: 0.95em;
+  color: #555;
+  padding: 0 15px;
+}
+
+.proyecto-card a {
+  display: inline-block;
+  margin: 15px 0;
+  padding: 8px 16px;
+  background: #007BFF;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.proyecto-card a:hover {
+  background: #0056b3;
+}
+
+.proyecto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+
+
+/* =================== */
+/* CONTACTO */
+/* =================== */
+#contacto {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: white;
+  text-align: center;
+  border-radius: 15px;
+  position: relative;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.formulario input, 
+.formulario textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+}
+
+.formulario button {
+  padding: 12px;
+  background: #ffeb3b;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.formulario button:hover { background: #fdd835; }
+
+/* Redes sociales */
+.redes {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.redes a {
+  font-size: 2rem;
+  color: white;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.redes a:hover {
+  transform: scale(1.3);
+  color: #ffeb3b;
+}
+
+/* =================== */
+/* FOOTER */
+/* =================== */
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+footer .redes a {
+  color: #fff;
+  margin: 0 0.5rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer .redes a:hover { color: #f39c12; }
+
+/* =================== */
+/* CANVAS MATRIX */
+/* =================== */
+/*#matrix {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  display: block;
+  background: #05080c;
+}
+*/
+#matrix {
+  position: fixed;   /* Siempre cubre la pantalla */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;       /* 🔥 Lo manda detrás del resto */
+}
+#particles-projects {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Fondo */
+}
+#proyectos > * {
+  position: relative;
+  z-index: 1; /* Contenido encima de partículas */
+}
