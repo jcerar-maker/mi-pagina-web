@@ -21,71 +21,82 @@ body {
 /* =================== */
 /* NAVBAR */
 /* =================== */
+/* === NAVBAR BASE === */
 .navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #222;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.7rem 2rem;
-  z-index: 999;
+  padding: 15px 30px;
+  background: #111;
+  color: white;
 }
 
 .navbar .logo img {
   height: 50px;
 }
 
-.navbar ul {
+/* Menú en escritorio */
+.nav {
   display: flex;
+  gap: 20px;
   list-style: none;
 }
 
-.navbar ul li {
-  margin-left: 1.5rem;
-}
-
-.navbar ul li a {
-  color: #fff;
+.nav li a {
+  color: white;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
-.navbar ul li a:hover {
-  color: #f39c12;
+.nav li a:hover {
+  color: #0f0; /* Verde matrix */
 }
 
-/* MENU RESPONSIVE */
+/* === BOTÓN HAMBURGUESA === */
 .menu-toggle {
-  display: none;
+  display: none; /* oculto en escritorio */
   flex-direction: column;
   cursor: pointer;
+  gap: 5px;
 }
 
 .menu-toggle span {
-  height: 3px;
+  display: block;
   width: 25px;
-  background: #fff;
-  margin-bottom: 4px;
-  border-radius: 5px;
+  height: 3px;
+  background: white;
+  border-radius: 3px;
 }
 
+/* === MÓVIL === */
 @media (max-width: 768px) {
-  .menu-toggle { display: flex; }
-  .nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: #222;
-    width: 200px;
+  .menu-toggle {
+    display: flex; /* mostrar hamburguesa */
   }
-  .nav.show { display: flex; }
-  .nav li { margin: 1rem 0; }
+
+  .nav {
+    position: absolute;
+    top: 70px; /* debajo del header */
+    right: 0;
+    background: #111;
+    width: 200px;
+    flex-direction: column;
+    align-items: center;
+    display: none; /* oculto por defecto */
+    padding: 20px 0;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .nav.show {
+    display: flex; /* se muestra al hacer clic */
+  }
+
+  .nav li {
+    margin: 15px 0;
+  }
 }
+
 
 /* =================== */
 /* HERO SECTION */
